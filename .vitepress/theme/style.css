@@ -1,0 +1,122 @@
+/**
+ * .vitepress/theme/style.css
+ * 蓝色基调 - 科技与专业感
+ */
+
+:root {
+  /* --------------------------------------
+   * 1. 品牌主色调 (Brand Colors - 蓝色系)
+   * -------------------------------------- */
+  
+  /* Brand 1: 主色 (Vue/科技蓝) - 用于按钮背景、链接颜色 */
+  --vp-c-brand-1: #3498db; 
+  
+  /* Brand 2: 悬停色 (Hover 状态) - 更亮更鲜艳 */
+  --vp-c-brand-2: #5dade2;
+  
+  /* Brand 3: 点击/深色 (Active 状态) - 深邃沉稳 */
+  --vp-c-brand-3: #2980b9;
+
+  /* --------------------------------------
+   * 2. 字体与排版 (Typography)
+   * -------------------------------------- */
+  --vp-font-family-base: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --vp-font-family-mono: "Fira Code", monospace;
+
+  /* --------------------------------------
+   * 3. 布局微调
+   * -------------------------------------- */
+  --vp-sidebar-width: 280px;
+  --vp-layout-max-width: 1440px;
+}
+
+/**
+ * 4. 暗黑模式适配 (Dark Mode)
+ */
+.dark {
+  /* 暗黑模式下，蓝色需要稍微亮一点，避免看不清 */
+  --vp-c-brand-1: #5dade2;
+  --vp-c-brand-2: #85c1e9;
+  --vp-c-brand-3: #3498db;
+}
+
+/**
+ * 5. 首页 Hero 区域设计优化
+ */
+
+/* 1. 主标题渐变色 (由深蓝到青色的渐变，非常有科技感) */
+.VPHero .name {
+  background: -webkit-linear-gradient(120deg, #2980b9 10%, #6dd5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* 淡淡的蓝色光晕，增加立体感 */
+  filter: drop-shadow(0 0 2em rgba(52, 152, 219, 0.3)); 
+}
+
+/* 2. 副标题 (Software Engineer | Creative Coder) 样式 */
+.VPHero .text {
+  color: var(--vp-c-text-1); /* 跟随主题文字色 */
+  /* 调整大小到合适，不喧宾夺主 */
+  font-size: 32px !important; 
+  line-height: 1.2;
+  margin-top: 10px;
+  font-weight: 600; 
+  opacity: 0.9;
+}
+
+/* 手机端适配 */
+@media (max-width: 640px) {
+  .VPHero .text {
+    font-size: 24px !important;
+  }
+}
+
+/* 3. 标语 (Tagline) 样式 */
+.VPHero .tagline {
+  font-size: 1.15rem;
+  color: var(--vp-c-text-2);
+  margin-top: 8px;
+}
+
+/* 4. 右侧图片动画：缓慢漂浮 (Float) */
+.VPHero .image-src {
+  animation: float 6s ease-in-out infinite;
+  max-height: 320px; /* 稍微给大一点点空间 */
+  border-radius: 5%; /* 强制把头像变圆 (如果是方形图片) */
+  box-shadow: 0 10px 40px rgba(52, 152, 219, 0.2); /* 蓝色阴影 */
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 5. 背景氛围光晕 (营造科技蓝背景) */
+.VPHero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  /* 这里的渐变是蓝色的 */
+  background-image: radial-gradient(circle at 75% 30%, rgba(52, 152, 219, 0.12) 0%, transparent 45%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 6. 按钮样式增强 */
+.VPButton.brand {
+  border-radius: 8px;
+  /* 按钮背景渐变：从正蓝到亮蓝 */
+  background-image: linear-gradient(to right, #2980b9, #3498db);
+  border: none; /* 去掉默认边框 */
+  transition: all 0.3s;
+}
+
+.VPButton.brand:hover {
+  transform: translateY(-2px);
+  /* 蓝色发光阴影 */
+  box-shadow: 0 8px 20px rgba(41, 128, 185, 0.4);
+}
