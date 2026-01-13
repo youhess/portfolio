@@ -6,6 +6,10 @@ defineProps({
     required: true
   }
 })
+
+const handleImageError = (event) => {
+  event.target.src = '/images/ImageCardBanner.png'
+}
 </script>
 
 <template>
@@ -13,7 +17,7 @@ defineProps({
     <div v-for="(item, index) in features" :key="index" class="card">
       <!-- 上半部分：图片区域 -->
       <div class="card-image">
-        <img :src="item.icon.src || item.icon" :alt="item.title" />
+        <img :src="item.icon.src || item.icon" :alt="item.title" @error="handleImageError" />
       </div>
       
       <!-- 下半部分：文字区域 -->

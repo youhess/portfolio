@@ -41,8 +41,57 @@
 }
 
 /**
- * 5. 首页 Hero 区域设计优化
+ * 5. 首页 Hero 区域设计优化 - 响应式适配
  */
+
+/* Hero 容器响应式布局 */
+.VPHero {
+  padding: 48px 24px !important;
+}
+
+/* 移动端：图片在上，文字在下 */
+@media (max-width: 959px) {
+  .VPHero .container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  
+  .VPHero .main {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    order: 2 !important;
+  }
+  
+  .VPHero .image {
+    order: 1 !important;
+    margin-bottom: 32px !important;
+    margin-top: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  
+  .VPHero .image-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .VPHero {
+    padding: 64px 48px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .VPHero {
+    padding: 80px 64px !important;
+  }
+}
 
 /* 1. 主标题渐变色 (由深蓝到青色的渐变，非常有科技感) */
 .VPHero .name {
@@ -50,47 +99,69 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* 淡淡的蓝色光晕，增加立体感 */
-  filter: drop-shadow(0 0 2em rgba(52, 152, 219, 0.3)); 
+  filter: drop-shadow(0 0 2em rgba(52, 152, 219, 0.3));
+  /* 响应式字体大小 */
+  font-size: clamp(32px, 8vw, 56px) !important;
+  line-height: 1.1;
 }
 
 /* 2. 副标题 (Software Engineer | Creative Coder) 样式 */
 .VPHero .text {
   color: var(--vp-c-text-1); /* 跟随主题文字色 */
-  /* 调整大小到合适，不喧宾夺主 */
-  font-size: 32px !important; 
-  line-height: 1.2;
-  margin-top: 10px;
+  /* 响应式字体大小 */
+  font-size: clamp(20px, 4vw, 32px) !important; 
+  line-height: 1.3;
+  margin-top: 12px;
   font-weight: 600; 
   opacity: 0.9;
 }
 
-/* 手机端适配 */
-@media (max-width: 640px) {
-  .VPHero .text {
-    font-size: 24px !important;
+/* 3. 标语 (Tagline) 样式 */
+.VPHero .tagline {
+  font-size: clamp(14px, 2.5vw, 18px);
+  color: var(--vp-c-text-2);
+  margin-top: 12px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .VPHero .tagline {
+    max-width: 100%;
+    padding: 0 8px;
   }
 }
 
-/* 3. 标语 (Tagline) 样式 */
-.VPHero .tagline {
-  font-size: 1.15rem;
-  color: var(--vp-c-text-2);
-  margin-top: 8px;
-}
-
-/* 4. 右侧图片动画：缓慢漂浮 (Float) */
+/* 4. 右侧图片动画：缓慢漂浮 (Float) - 响应式适配 */
 .VPHero .image-src {
-  animation: float 6s ease-in-out infinite;
-  max-height: 320px; /* 稍微给大一点点空间 */
-  border-radius: 5%; /* 强制把头像变圆 (如果是方形图片) */
-  box-shadow: 0 10px 40px rgba(52, 152, 219, 0.2); /* 蓝色阴影 */
+  /* animation: float 6s ease-in-out infinite; */
+  max-height: clamp(200px, 40vw, 320px);
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(52, 152, 219, 0.2);
 }
 
-@keyframes float {
+/* 移动端图片优化 */
+@media (max-width: 768px) {
+  .VPHero .image-src {
+    max-height: 180px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .VPHero .image-src {
+    max-height: 240px;
+  }
+}
+
+/* @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-15px); }
   100% { transform: translateY(0px); }
-}
+} */
 
 /* 5. 背景氛围光晕 (营造科技蓝背景) */
 .VPHero::before {
@@ -106,17 +177,57 @@
   pointer-events: none;
 }
 
-/* 6. 按钮样式增强 */
-.VPButton.brand {
+/* 6. 按钮样式增强 - 响应式适配 */
+.VPButton.brand,
+.VPButton.alt {
   border-radius: 8px;
+  /* 响应式按钮大小 */
+  padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 24px);
+  font-size: clamp(14px, 2vw, 16px);
+  transition: all 0.3s;
+}
+
+.VPButton.brand {
   /* 按钮背景渐变：从正蓝到亮蓝 */
   background-image: linear-gradient(to right, #2980b9, #3498db);
   border: none; /* 去掉默认边框 */
-  transition: all 0.3s;
 }
 
 .VPButton.brand:hover {
   transform: translateY(-2px);
   /* 蓝色发光阴影 */
   box-shadow: 0 8px 20px rgba(41, 128, 185, 0.4);
+}
+
+/* Hero 按钮组响应式布局 */
+.VPHero .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+/* 移动端按钮居中 */
+@media (max-width: 959px) {
+  .VPHero .actions {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 960px) {
+  .VPHero .actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .VPHero .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .VPButton {
+    width: 100%;
+    text-align: center;
+  }
 }
