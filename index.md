@@ -60,21 +60,21 @@ const designProjects = [
     details:
       "Homepage design for a garage floor coating brand: installation hero imagery, three key benefit blocks, product/kit entry points, and newsletter signup—built to support clear hierarchy and conversion.",
     icon: "/images/diy-garage-floor.png", // replace with image 1 actual path
-    link: "/projects/diy-garage-floor",
+    link: "https://youhess.github.io/Diy-Garage-Website/",
   },
   {
     title: "Look and Senses — Editorial Product Landing",
     details:
       "Minimal, grid-based editorial layout with generous whitespace and material-driven backgrounds. Focused on premium storytelling through product photography and controlled pacing.",
     icon: "/images/look-and-senses.png", // replace with image 2 actual path
-    link: "/projects/look-and-senses",
+    link: "https://youhess.github.io/Fragrant-Living-Website/",
   },
   {
     title: "Norwegian Rain — Fashion Brand Homepage",
     details:
       "Fashion brand homepage featuring seasonal hero banners, modular content sections, a popular-products grid, and brand story blocks—balancing atmosphere with efficient browsing.",
     icon: "/images/norwegian-rain.png", // replace with image 3 actual path
-    link: "/projects/norwegian-rain",
+    link: "https://youhess.github.io/Nordic-Minimalist-Fashion-Website/",
   },
 ];
 

@@ -14,7 +14,14 @@ const handleImageError = (event) => {
 
 <template>
   <div class="image-card-container">
-    <div v-for="(item, index) in features" :key="index" class="card">
+    <a 
+      v-for="(item, index) in features" 
+      :key="index" 
+      :href="item.link" 
+      :target="item.link?.startsWith('http') ? '_blank' : '_self'"
+      :rel="item.link?.startsWith('http') ? 'noopener noreferrer' : undefined"
+      class="card"
+    >
       <!-- 上半部分：图片区域 -->
       <div class="card-image">
         <img :src="item.icon.src || item.icon" :alt="item.title" @error="handleImageError" />
@@ -25,7 +32,7 @@ const handleImageError = (event) => {
         <h3>{{ item.title }}</h3>
         <p>{{ item.details }}</p>
       </div>
-    </div>
+    </a>
   </div>
 </template>
 
@@ -41,11 +48,14 @@ const handleImageError = (event) => {
 }
 
 .card {
+  display: block;
+  text-decoration: none;
   background-color: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-bg-soft);
   border-radius: 12px;
   overflow: hidden; /* 确保图片圆角不溢出 */
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .card:hover {
