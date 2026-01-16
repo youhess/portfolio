@@ -5,7 +5,7 @@ export default defineConfig({
   description: "This will be Youhess website",
   
   // 部署时的路径，如果你放在 github pages 的 /my-repo/ 下，这里就填 '/my-repo/'
-  base: '/', 
+  base: '/portfolio/', 
 
   themeConfig: {
     // 顶部导航

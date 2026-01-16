@@ -1,0 +1,63 @@
+# ================================
+# Node / npm / pnpm / yarn
+# ================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# lock files（保留一个即可，通常保留你实际使用的）
+# 如果你已经提交了 package-lock.json / pnpm-lock.yaml，请不要忽略
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ================================
+# Vite / VitePress build output
+# ================================
+dist/
+.vitepress/dist/
+
+# ================================
+# Cache / temp
+# ================================
+.cache/
+.vitepress/cache/
+.temp/
+.tmp/
+
+# ================================
+# Logs
+# ================================
+logs/
+*.log
+
+# ================================
+# OS / Editor
+# ================================
+.DS_Store
+Thumbs.db
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ================================
+# Env files
+# ================================
+.env
+.env.*
+!.env.example
+
+# ================================
+# Coverage / Test
+# ================================
+coverage/
+*.lcov
+
+# ================================
+# Build system / CI
+# ================================
+.eslintcache
