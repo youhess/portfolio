@@ -8,7 +8,7 @@ defineProps({
 })
 
 const handleImageError = (event) => {
-  event.target.src = '/images/ImageCardBanner.png'
+  event.target.src = './images/ImageCardBanner.png'
 }
 </script>
 
