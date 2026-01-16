@@ -11,7 +11,8 @@ export default defineConfig({
     // 顶部导航
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guaide', link: '/markdown-examples' },
+      { text: 'Life', link: '/markdown-examples' },
+      { text: 'Work', link: '/markdown-examples' },
       { 
         text: 'About', 
         items: [
