@@ -11,13 +11,12 @@ export default defineConfig({
     // 顶部导航
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Life', link: '/markdown-examples' },
-      { text: 'Work', link: '/markdown-examples' },
+      { text: 'journal', link: '/hello-world' },
       { 
         text: 'About', 
         items: [
-          { text: 'Vue 官网', link: 'https://vuejs.org' },
-          { text: 'VitePress', link: 'https://vitepress.dev' }
+          { text: '稀土掘金', link: 'https://juejin.cn/user/2696448572141277' },
+          { text: 'linkedin', link: 'https://www.linkedin.com/in/zhendichen' }
         ]
       }
     ],
@@ -27,8 +26,7 @@ export default defineConfig({
       {
         text: '开始上手',
         items: [
-          { text: 'Markdown 示例', link: '/markdown-examples' },
-          { text: 'API 示例', link: '/api-examples' }
+          { text: '你好世界', link: '/hello-world' },
         ]
       }
     ],
