@@ -1,6 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
 import './style.css' // 引入自定义样式
+import PdfPreview from './components/PdfPreview.vue'
 
 // 引入可能用到的组件，比如 ElementPlus 或者你自己写的组件
 // import MyComponent from './components/MyComponent.vue'
@@ -26,6 +27,7 @@ export default {
   // 3. 增强 Vue 应用能力 (相当于 main.ts)
   enhanceApp({ app, router, siteData }) {
     // 注册全局组件
+    app.component('PdfPreview', PdfPreview)
     // app.component('MyComponent', MyComponent) 
     console.log('VitePress App Initialized!')
   }

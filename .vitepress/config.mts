@@ -11,12 +11,9 @@ export default defineConfig({
     // 顶部导航
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Journal', link: '/hello-world' },
       { 
         text: 'About', 
         items: [
-          { text: '稀土掘金', link: 'https://juejin.cn/user/2696448572141277' },
-          { text: 'linkedin', link: 'https://www.linkedin.com/in/zhendichen' },
           { text: 'certificates', link: '/certificates' }
         ]
       }
@@ -37,7 +34,10 @@ export default defineConfig({
 
     // 社交链接
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/youhess' }
+      { icon: 'github', link: 'https://github.com/youhess' },
+      { icon: 'linkedin', link: 'https://www.linkedin.com/in/zhendichen' },
+      { icon: 'juejin', link: 'https://juejin.cn/user/2696448572141277' }
+
     ],
     
     // 页脚 (仅在 Home 页显示，文档页默认不显示)
