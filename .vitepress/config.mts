@@ -11,7 +11,7 @@ export default defineConfig({
     // 顶部导航
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'journal', link: '/hello-world' },
+      { text: 'Journal', link: '/hello-world' },
       { 
         text: 'About', 
         items: [
