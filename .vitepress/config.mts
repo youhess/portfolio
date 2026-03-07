@@ -24,9 +24,10 @@ export default defineConfig({
     // 侧边栏
     sidebar: [
       {
-        text: '开始上手',
+        text: '日志',
         items: [
           { text: '你好世界', link: '/hello-world' },
+          { text: '简历', link: '/resume' }
         ]
       }
     ],

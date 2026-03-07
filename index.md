@@ -13,7 +13,7 @@ hero:
   actions:
     - theme: brand
       text: Resume
-      link: /about
+      link:  /resume
     - theme: alt
       text: GitHub
       link: https://github.com/youhess
