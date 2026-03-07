@@ -16,7 +16,8 @@ export default defineConfig({
         text: 'About', 
         items: [
           { text: '稀土掘金', link: 'https://juejin.cn/user/2696448572141277' },
-          { text: 'linkedin', link: 'https://www.linkedin.com/in/zhendichen' }
+          { text: 'linkedin', link: 'https://www.linkedin.com/in/zhendichen' },
+          { text: 'certificates', link: '/certificates' }
         ]
       }
     ],
@@ -26,8 +27,10 @@ export default defineConfig({
       {
         text: '日志',
         items: [
-          { text: '你好世界', link: '/hello-world' },
-          { text: '简历', link: '/resume' }
+     
+          { text: '简历', link: '/resume' },
+          { text: '证书', link: '/certificates' },
+
         ]
       }
     ],
